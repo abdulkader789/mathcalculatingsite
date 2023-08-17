@@ -1,0 +1,23 @@
+.drag-over {
+    border: dashed 3px red;
+}
+.hide {
+    display: none;
+}
+.drop-targets{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.container{
+    display:gird;
+    grid-template-columns: 40% 60%;
+}
+.box{
+    height: 120px;
+    width: 200px;
+    border:1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
