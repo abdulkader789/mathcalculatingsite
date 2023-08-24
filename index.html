@@ -1,43 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>JavaScript - Drag and Drop</h1>
-        <div class="drop-targets">
 
-            <div class="options">
-                <div class="box">
-                    <div class="item" id="item" draggable="true">
-                        <h2>Drop me1</h2>
-                        
-                    </div>
-                </div>
-                <div class="box">
-                        <div class="item" id="item2" draggable="true">
-                            <h2>Drop me2</h2>
-                        
-                        </div>
-                </div>
-                <div class="box">
-                    <div class="item" id="item2" draggable="true">
-                        <h2>Drop me2</h2>
-                    
-                    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="">
+
+  <header id="calculatorBox" class="h-screen p-5 bg-indigo-600">
+    <div class="bg-gray-300 p-5 h-full rounded-md shadow-md dark:bg-gray-800">
+      <div class="bg-white grid grid-row-3 lg:grid-cols-3 h-full">
+
+        <section id="options" class="border-right ">
+
+          <!-- item box -->
+          <div class="grid place-items-center p-5 grid-cols-3  md:grid-cols-3 lg:grid-cols-2 border  h-full">
+
+            <!-- item 1 -->
+            <div draggable="true" class="ellipse draggable-box w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28">
+              <img src="images/ellipse.png" alt="" class="ellipse h-[90%] mb-3 " />
+              <h2 class="ellipse  text-center text-xs sm:text-sm font-bold ">Ellipse</h2>
+
             </div>
+
+            <!-- item 1 -->
+            <div draggable="true" class="parallelogram  draggable-box  w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28">
+
+              <img src="images/parallelogram.png" alt="" class="parallelogram h-[90%] mb-3 " />
+              <h2 class="parallelogram text-center text-xs sm:text-sm font-bold">Parallelogram</h2>
+
             </div>
-            <div class="mathbox">
-                <div class="box drop-zone"></div>
-                
+
+            <!-- item 1 -->
+            <div draggable="true" class="pentagon draggable-box w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28">
+              <img src="images/pentagon.png" alt="" class="pentagon mb-3 h-[90%]" />
+              <h2 class="pentagon text-center text-xs sm:text-sm font-bold ">Pentagon</h2>
             </div>
-        </div>
+
+            <!-- item 1 -->
+            <div draggable="true" class="rectangle draggable-box w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28">
+              <img src="images/rectangle.png" alt="" class="rectangle mb-3 h-[90%]" />
+              <h2 class="rectangle text-center text-xs sm:text-sm font-bold ">Rechtangle</h2>
+            </div>
+
+            <!-- item 1 -->
+            <div draggable="true" class="rhombus draggable-box  w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28">
+              <img src="images/rhombus.png" alt="" class="rhombus mb-3 h-[90%]" />
+              <h2 class="rhombus text-center text-xs sm:text-sm font-bold ">Rhombus</h2>
+            </div>
+
+            <!-- item 1 -->
+            <div draggable="true" class="triangle draggable-box w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28">
+              <img src="images/triangle.png" alt="" class="triangle mb-3 h-[90%]" />
+              <h2 class="triangle text-center text-xs sm:text-sm font-bold ">Triangle</h2>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Drop Zone -->
+        <section class="border-right">
+          <div class="flex dropzone items-center justify-center  p-6 h-full   shadow-md col-span-6 dark:bg-gray-800 ">
+            <h1 class="text-xl font-bold text-white capitalize dark:text-white">Drop Box</h1>
+
+
+          </div>
+
+        </section>
+        <section id="options" class="border-right">
+          <h2>Hello</h2>
+        </section>
+
+
+      </div>
     </div>
 
-    <script src="main.js"></script>
+  </header>
+
+
+
+
+  <!-- 
+  <div id="main" class="bg-gray-100 p-10">
+    <div class="border border-red-600 grid grid-cols-12 p-10 gap-4 w-full">
+      <div class="col-span-4 flex flex-wrap justify-evenly items-center border border-red-600">
+        <div draggable="true" class="draggable-box relative flex flex-col items-center rounded-lg shadow-lg w-48 h-48">
+          <img src="https://circle.so/wp-content/uploads/Ellipse-261.png" alt="" class="rounded-t-lg" />
+          <div class="absolute top-20">
+            <h2>Circle math</h2>
+          </div>
+        </div>
+        <div class="relative flex flex-col items-center w-48 h-48">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Green_equilateral_triangle_point_up.svg/886px-Green_equilateral_triangle_point_up.svg.png"
+            alt="" class="rounded-t-lg" />
+          <div class="absolute top-20">
+            <h2>Triangle Math</h2>
+          </div>
+        </div>
+        <div class="relative flex flex-col items-center bg-white rounded-lg shadow-lg w-48 h-48">
+          <img src="https://clipart-library.com/img/1194619.png" alt="" class="rounded-t-lg" />
+          <div class="absolute top-20">
+            <h2>Rectangle Math</h2>
+          </div>
+        </div>
+        <div class="relative flex flex-col items-center bg-white rounded-lg shadow-lg w-48 h-48">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/020/906/687/original/geometric-pentagon-shape-on-a-transparent-background-free-png.png"
+            alt="" class="rounded-t-lg" />
+          <div class="absolute top-20">
+            <h2>Pentagon Math</h2>
+          </div>
+        </div>
+      </div>
+      <div class="dropzone col-span-5 border border-black h-64">dropzone</div>
+      <div class="history-list col-span-3 border border-blue-800">
+        history
+      </div>
+    </div>
+  </div> -->
+  <script src="main.js" type="module"></script>
 </body>
+
 </html>
