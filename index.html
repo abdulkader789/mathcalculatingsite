@@ -8,74 +8,76 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="">
+<body>
 
   <header id="calculatorBox" class="h-screen p-5 bg-indigo-600">
     <div class="bg-gray-300 p-5 h-full rounded-md shadow-md dark:bg-gray-800">
-      <div class="bg-white grid grid-row-3 lg:grid-cols-3 h-full">
+      <section class="bg-white flex flex-col md:flex-row h-full">
 
-        <section id="options" class="border-right ">
+        <section class="h-1/2 w-full md:h-full md:w-1/2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 border-right">
 
-          <!-- item box -->
-          <div class="grid place-items-center p-5 grid-cols-3  md:grid-cols-3 lg:grid-cols-2 border  h-full">
 
-            <!-- item 1 -->
-            <div draggable="true" class="ellipse draggable-box w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28">
-              <img src="images/ellipse.png" alt="" class="ellipse h-[90%] mb-3 " />
-              <h2 class="ellipse  text-center text-xs sm:text-sm font-bold ">Ellipse</h2>
+          <!-- item 1 -->
+          <div draggable="true" class="ellipse draggable-box flex flex-col justify-center items-center">
 
-            </div>
-
-            <!-- item 1 -->
-            <div draggable="true" class="parallelogram  draggable-box  w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28">
-
-              <img src="images/parallelogram.png" alt="" class="parallelogram h-[90%] mb-3 " />
-              <h2 class="parallelogram text-center text-xs sm:text-sm font-bold">Parallelogram</h2>
-
-            </div>
-
-            <!-- item 1 -->
-            <div draggable="true" class="pentagon draggable-box w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28">
-              <img src="images/pentagon.png" alt="" class="pentagon mb-3 h-[90%]" />
-              <h2 class="pentagon text-center text-xs sm:text-sm font-bold ">Pentagon</h2>
-            </div>
-
-            <!-- item 1 -->
-            <div draggable="true" class="rectangle draggable-box w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28">
-              <img src="images/rectangle.png" alt="" class="rectangle mb-3 h-[90%]" />
-              <h2 class="rectangle text-center text-xs sm:text-sm font-bold ">Rechtangle</h2>
-            </div>
-
-            <!-- item 1 -->
-            <div draggable="true" class="rhombus draggable-box  w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28">
-              <img src="images/rhombus.png" alt="" class="rhombus mb-3 h-[90%]" />
-              <h2 class="rhombus text-center text-xs sm:text-sm font-bold ">Rhombus</h2>
-            </div>
-
-            <!-- item 1 -->
-            <div draggable="true" class="triangle draggable-box w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28">
-              <img src="images/triangle.png" alt="" class="triangle mb-3 h-[90%]" />
-              <h2 class="triangle text-center text-xs sm:text-sm font-bold ">Triangle</h2>
-            </div>
+            <img src="images/ellipse.png" alt="" class="ellipse w-14 h-14 mb-2 md:w-24 md:h-24 lg:w-28 lg:h-28" />
+            <h2 class="ellipse text-center text-[10px] md:text-sm font-bold">Ellipse</h2>
 
           </div>
+
+          <!-- item 1 -->
+          <div draggable="true" class="parallelogram draggable-box flex flex-col justify-center items-center">
+
+            <img src="images/parallelogram.png" alt=""
+              class="parallelogram  w-14 h-14 mb-2 md:w-24 md:h-24 lg:w-28 lg:h-28" />
+            <h2 class="parallelogram text-center text-[10px] md:text-sm font-bold">Parallelogram</h2>
+
+          </div>
+
+          <!-- item 1 -->
+          <div draggable="true" class="pentagon draggable-box  draggable-box flex flex-col justify-center items-center">
+            <img src="images/pentagon.png" alt="" class="pentagon w-14 h-14 mb-2 md:w-24 md:h-24 lg:w-28 lg:h-28" />
+            <h2 class="pentagon text-center text-[10px] md:text-sm font-bold ">Pentagon</h2>
+          </div>
+
+          <!-- item 1 -->
+          <div draggable="true" class="rectangle draggable-box  flex flex-col justify-center items-center">
+            <img src="images/rectangle.png" alt="" class="rectangle w-14 h-14 mb-2 md:w-24 md:h-24 lg:w-28 lg:h-28" />
+            <h2 class="rectangle text-center text-[10px] md:text-sm font-bold ">Rechtangle</h2>
+          </div>
+
+          <!-- item 1 -->
+          <div draggable="true" class="rhombus draggable-box  flex flex-col justify-center items-center">
+            <img src="images/rhombus.png" alt="" class="rhombus w-14 h-14 mb-2 md:w-24 md:h-24 lg:w-28 lg:h-28" />
+            <h2 class="rhombus text-center text-[10px] md:text-sm font-bold ">Rhombus</h2>
+          </div>
+
+          <!-- item 1 -->
+          <div draggable="true" class="triangle draggable-box  flex flex-col justify-center items-center">
+            <img src="images/triangle.png" alt="" class="triangle w-14 h-14 mb-2 md:w-24 md:h-24 lg:w-28 lg:h-28" />
+            <h2 class="triangle text-center text-[10px] md:text-sm font-bold ">Triangle</h2>
+          </div>
+
         </section>
 
         <!-- Drop Zone -->
-        <section class="border-right">
-          <div class="flex dropzone items-center justify-center  p-6 h-full   shadow-md col-span-6 dark:bg-gray-800 ">
-            <h1 class="text-xl font-bold text-white capitalize dark:text-white">Drop Box</h1>
+        <section
+          class="flex dropzone justify-center h-1/2 bg-gray-100 border border-l-2 w-full rounded-lg shadow-md md:h-full md:w-1/2">
+          <div id="calculator-box" class="w-full max-w-md p-4  ">
+
+            <div class="flex items-center justify-center w-full h-full">
+              <div
+                class="w-64 h-32 border-dashed border-4 border-blue-500 rounded-lg flex items-center justify-center text-gray-500 text-lg">
+                <h2>Drop Your Shape Here</h2>
+              </div>
+            </div>
 
 
           </div>
 
         </section>
-        <section id="options" class="border-right">
-          <h2>Hello</h2>
-        </section>
 
-
-      </div>
+      </section>
     </div>
 
   </header>
