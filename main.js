@@ -1,31 +1,30 @@
-// Define the calculateArea function
-function calculateArea() {
-  const pi = 3.14159;
-  const input1 = document.getElementById("majorAxis");
-  const input2 = document.getElementById("minorAxis");
+function convertToNumber() {
+  const input1 = document.getElementById("value1");
+  const input2 = document.getElementById("value2");
   const num1 = parseFloat(input1.value);
   const num2 = parseFloat(input2.value);
-  if (num1 && num2) {
-    const result = pi * num1 * num2;
-    document.getElementById("result").innerText = `Area: ${result}`;
+
+  if (!isNaN(num1) && !isNaN(num2)) {
+    return [num1, num2];
   } else {
-    alert("Input field is empty");
+    return NaN;
   }
 }
 
-// Define the calculateCircumference function
-function calculateCircumference() {
+// Define the calculateArea function
+function calculateArea(num1, num2) {
   const pi = 3.14159;
-  const input1 = document.getElementById("majorAxis");
-  const input2 = document.getElementById("minorAxis");
-  const num1 = parseFloat(input1.value);
-  const num2 = parseFloat(input2.value);
-  if (num1 && num2) {
-    const result = 2 * pi * Math.sqrt((num1 * num1 + num2 * num2) / 2);
-    document.getElementById("result").innerText = `Circumference: ${result}`;
-  } else {
-    alert("Input field is empty");
-  }
+  const result = pi * num1 * num2;
+  document.getElementById("result").innerText = `Area: ${result.toFixed(2)}`;
+}
+
+// Define the calculateCircumference function
+function calculateCircumference(num1, num2) {
+  const pi = 3.14159;
+  const result = 2 * pi * Math.sqrt((num1 * num1 + num2 * num2) / 2);
+  document.getElementById(
+    "result"
+  ).innerText = `Circumference: ${result.toFixed(2)}`;
 }
 
 const draggableBoxes = document.querySelectorAll(".draggable-box");
@@ -56,12 +55,15 @@ function onDrop(e) {
   let formula = "";
   if (operationType.includes("ellipse")) {
     operationType = "Ellipse";
-    formula = `<p class="text-sm mb-1 md:mb-3">Area A = π · a · b</p>
+    formula = `<p class="text-sm mb-1 md:mb-3">Area A = π * a * b</p>
                <p class="text-sm mb-1 md:mb-3">Circumference (C) ≈ 2π * √((a^2 + b^2) / 2)</p>
     `;
   }
   if (operationType.includes("parallelogram")) {
     operationType = "Parallelogram";
+    formula = `<p class="text-sm mb-1 md:mb-3">Area A = b * h </p>
+               <p class="text-sm mb-1 md:mb-3">Perimeter P= 2( a + b)</p>
+    `;
   }
   if (operationType.includes("pentagon")) {
     operationType = "Pentagon";
@@ -83,13 +85,13 @@ function onDrop(e) {
        
           <div class="flex">
             <div class="w-1/2">
-              <label for="majorAxis" class="block t mb-2 text-sm font-semibold text-gray-700">Major Axis Length:</label>
-              <input type="number" id="majorAxis" placeholder="cm"  class=" w-full mb-2 border rounded">
+              <label for="value1" class="block t mb-2 text-sm font-semibold text-gray-700">Value:</label>
+              <input type="number" id="value1" placeholder="cm"  class=" w-full mb-2 border rounded">
               </div>
 
             <div class="w-1/2">
-              <label for="minorAxis" class="block mb-2 text-sm font-semibold text-gray-700">Minor Axis Length:</label>
-              <input type="number" id="minorAxis" placeholder="cm" class=" w-full mb-2 border rounded">
+              <label for="value2" class="block mb-2 text-sm font-semibold text-gray-700">Value</label>
+              <input type="number" id="value2" placeholder="cm" class=" w-full mb-2 border rounded">
             </div>
           </div>
 
@@ -107,8 +109,22 @@ function onDrop(e) {
   // Add event listeners to the buttons
   document
     .getElementById("calculateAreaButton")
-    .addEventListener("click", calculateArea);
+    .addEventListener("click", () => {
+      const numbers = convertToNumber();
+      if (numbers) {
+        calculateArea(numbers[0], numbers[1]);
+      } else {
+        alert("input field is empty");
+      }
+    });
   document
     .getElementById("calculateCircumferenceButton")
-    .addEventListener("click", calculateCircumference);
+    .addEventListener("click", () => {
+      const numbers = convertToNumber();
+      if (numbers) {
+        calculateCircumference(numbers[0], numbers[1]);
+      } else {
+        alert("input field is empty");
+      }
+    });
 }
